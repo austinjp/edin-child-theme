@@ -24,11 +24,11 @@ function edin_improved_post_thumbnail() {
   $ratio = get_theme_mod( 'edin_thumbnail_style' );
   switch ( $ratio ) {
   case 'square':
-    ?><a class="post-thumbnail edin-improved-post-thumbnail-square" <?php
+    ?><a class="post-thumbnail edin-improved-post-thumbnail edin-improved-post-thumbnail-square" <?php
     ?>href="<?php the_permalink(); ?>" <?php
     break;
   default:
-    ?><a class="post-thumbnail edin-improved-post-thumbnail-landscape" <?php
+    ?><a class="post-thumbnail edin-improved-post-thumbnail edin-improved-post-thumbnail-landscape" <?php
     ?>href="<?php the_permalink(); ?>" <?php
   }
   ?>style="background-image: url('<?php

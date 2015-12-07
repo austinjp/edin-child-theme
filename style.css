@@ -14,10 +14,16 @@
 
 /* Note: Edin uses breakpoints at 600, 768, 1024, 1230 */
 
-* { text-transform: none !important; }
+h1, h2, h3, h4, h5, h6, .more-link, .site-title { text-transform: none !important; }
+
+.grid {
+    background-color: white;
+    padding: 4px;
+    margin-bottom: 10px;
+}
 
 .edin-improved-post-thumbnail, .edin-improved-post-thumbnail-landscape {
-    height: 240px;
+    height: 180px;
     width: 100%;
     margin: 0 auto !important;
 }
@@ -28,8 +34,40 @@
     margin: 0 auto;
 }
 
+/* Make the first 3 thumbnails larger, and the last 3 thumbnails smaller */
+/* This requires your grid to be in multipled of three! */
+
+.grid:last-child .edin-improved-post-thumbnail,
+.grid:nth-last-child(2) .edin-improved-post-thumbnail,
+.grid:nth-last-child(3) .edin-improved-post-thumbnail,
+.grid:last-child .edin-improved-post-thumbnail-square,
+.grid:nth-last-child(2) .edin-improved-post-thumbnail-square,
+.grid:nth-last-child(3) .edin-improved-post-thumbnail-square,
+.grid:last-child .edin-improved-post-thumbnail-landscape,
+.grid:nth-last-child(2) .edin-improved-post-thumbnail-landscape,
+.grid:nth-last-child(3) .edin-improved-post-thumbnail-landscape
+{
+    height: 120px;
+}
+
+.grid:first-child .edin-improved-post-thumbnail,
+.grid:nth-child(2) .edin-improved-post-thumbnail,
+.grid:nth-child(3) .edin-improved-post-thumbnail,
+.grid:first-child .edin-improved-post-thumbnail-square,
+.grid:nth-child(2) .edin-improved-post-thumbnail-square,
+.grid:nth-child(3) .edin-improved-post-thumbnail-square,
+.grid:first-child .edin-improved-post-thumbnail-landscape,
+.grid:nth-child(2) .edin-improved-post-thumbnail-landscape,
+.grid:nth-child(3) .edin-improved-post-thumbnail-landscape
+{
+    height: 240px;
+}
+
+
+/* ############################################# */
+
 img.edin-improved-post-thumbnail {
-    display: hidden;
+    display: none;
 }
 
 .grid .has-post-thumbnail.hentry {
