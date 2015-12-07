@@ -12,12 +12,12 @@
 */
 
 .edin-improved-post-thumbnail, .edin-improved-post-thumbnail-landscape {
-    height: 240px;
+    height: 140px;
     width: 330px;
 }
 
 .edin-improved-post-thumbnail-square {
-    height: 330px;
+    height: 130px;
     width: 330px;
 }
 
