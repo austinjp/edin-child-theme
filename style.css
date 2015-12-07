@@ -29,7 +29,7 @@
 }
 
 img.edin-improved-post-thumbnail {
-    display: none;
+    display: hidden;
 }
 
 .grid .has-post-thumbnail.hentry {
