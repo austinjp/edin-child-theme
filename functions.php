@@ -12,6 +12,12 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+/**
+   Improve post thumbnails e.g. for use on grid page, by hiding them with CSS
+   to reveal an identical background image. This allows realigning of the background
+   image easily with CSS property background-position. Requires user to set the
+   custom field "image_focus" in each page, as required.
+*/
 
 function edin_improved_post_thumbnail() {
 
@@ -44,9 +50,15 @@ echo esc_url( $thumbnail[0] );
   <img class="edin-improved-post-thumbnail" src="<?php echo esc_url( $thumbnail[0] ); ?>">
   <?php
   ?></a><?php
+     
+     /*
+       FIXME Should detect if image_focus is not sent.
+       However, CSS errors fail gracefully.
+     */
 
-     /* Instead of using the thumbnail image on top of the background image,
-	could use a transparent PNG instead:
-	<img class="edin-improved-post-thumbnail" src="<?php echo '' . get_stylesheet_directory_uri() . '/transparent.png' ?>">
+     /*
+       Instead of using the thumbnail image on top of the background image,
+       could use a transparent PNG instead:
+       <img class="edin-improved-post-thumbnail" src="<?php echo '' . get_stylesheet_directory_uri() . '/transparent.png' ?>">
      */
 }
