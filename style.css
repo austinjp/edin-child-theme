@@ -28,6 +28,10 @@
     margin: 0 auto;
 }
 
+img.edin-improved-post-thumbnail {
+    display: none;
+}
+
 .grid .has-post-thumbnail.hentry {
     text-align: center !important;
 }
