@@ -11,13 +11,29 @@
  Text Domain:  edin-child
 */
 
+
+/* Note: Edin uses breakpoints at 600, 768, 1024, 1230 */
+
+* { text-transform: none !important; }
+
 .edin-improved-post-thumbnail, .edin-improved-post-thumbnail-landscape {
-    height: 140px;
-    width: 330px;
+    height: 240px;
+    width: 100%;
+    margin: 0 auto !important;
 }
 
 .edin-improved-post-thumbnail-square {
-    height: 130px;
-    width: 330px;
+    height: 330px;
+    width: 100%;
+    margin: 0 auto;
 }
 
+.grid .has-post-thumbnail.hentry {
+    text-align: center !important;
+}
+
+.grid .entry-header,
+.grid .entry-summary,
+.grid .entry-footer {
+    text-align: left;
+}
