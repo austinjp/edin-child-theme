@@ -6,10 +6,8 @@
 var path = document.getElementById('hero-aligner').src;
 var align = decodeURI(getQueryVariable('align',path));
 
-/*
-  align = align.replace(/[^a-zA-Z0-9]/g,' ');
-  align = align.replace(/\s+/g,' ');
-*/
+align = align.replace(/[^a-zA-Z0-9]/g,' ');
+align = align.replace(/\s+/g,' ');
 
 var style = document.createElement("style");
 
