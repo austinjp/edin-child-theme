@@ -17,8 +17,6 @@ var style = document.createElement("style");
 style.appendChild(document.createTextNode('.hero.with-featured-image { background-position: ' + align + '; }'));
 document.head.appendChild(style);
 
-console.log(style);
-
 function getQueryVariable(variable,path) {
     var query = path;
     var vars = query.split("?");
