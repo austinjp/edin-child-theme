@@ -12,6 +12,44 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+
+/**
+   Improve excerpt displayed on grid page. Permit certain HTML to allow basic formatting.
+   Taken from http://www.jeffmould.com/2014/01/17/enabling-formatting-wordpress-excerpt/
+*/
+
+function custom_wp_trim_excerpt($text) {
+  $raw_excerpt = $text;
+  if ( '' == $text ) {
+    //Retrieve the post content. 
+    $text = get_the_content('');
+    $text = strip_shortcodes( $text );
+    $text = apply_filters('the_content', $text);
+    $text = str_replace(']]&gt;', ']]&gt;', $text);
+    
+    // the code below sets the excerpt length to 55 words. You can adjust this number for your own blog.
+    $excerpt_length = apply_filters('excerpt_length', 55);
+    
+    // the code below sets what appears at the end of the excerpt, in this case ...
+    $excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+    
+    $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+    if ( count($words) > $excerpt_length ) {
+      array_pop($words);
+      $text = implode(' ', $words);
+      $text = force_balance_tags( $text );
+      $text = $text . $excerpt_more;
+    } else {
+      $text = implode(' ', $words);
+    }
+    
+  }
+  return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'custom_wp_trim_excerpt');
+
+
 /**
    Improve post thumbnails e.g. for use on grid page, by hiding them with CSS
    to reveal an identical background image. This allows realigning of the background
