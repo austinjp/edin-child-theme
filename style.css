@@ -79,3 +79,11 @@ img.edin-improved-post-thumbnail {
 .grid .entry-footer {
     text-align: left;
 }
+
+#colophon {
+    display: none;
+}
+
+h1.site-title {
+  padding: 0 !important;
+}
