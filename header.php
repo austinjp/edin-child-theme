@@ -16,7 +16,13 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-   <script id="hero-aligner" type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/hero-aligner.js?align=center+top"></script>
+
+<?php
+   $pageid = get_the_ID();
+if (get_post_meta($pageid, 'image_focus', 1)) {
+?>
+<script id="hero-aligner" type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/hero-aligner.js?align=<?php echo urlencode(get_post_meta($pageid, 'image_focus', 1)) ?>"></script>
+    <?php } ?>
 
 </head>
 
