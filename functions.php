@@ -18,6 +18,66 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
    Taken from http://www.jeffmould.com/2014/01/17/enabling-formatting-wordpress-excerpt/
 */
 
+function edin_improved_widgets_init() {
+  register_sidebar( array(
+    'name'          => __( 'Front Page Four', 'edin' ),
+    'id'            => 'sidebar-8',
+    'description'   => __( 'Use this widget area to display widgets in the first column, second row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+  register_sidebar( array(
+    'name'          => __( 'Front Page Five', 'edin' ),
+    'id'            => 'sidebar-9',
+    'description'   => __( 'Use this widget area to display widgets in the second column, second row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+  register_sidebar( array(
+    'name'          => __( 'Front Page Six', 'edin' ),
+    'id'            => 'sidebar-10',
+    'description'   => __( 'Use this widget area to display widgets in the third column, second row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+
+
+  register_sidebar( array(
+    'name'          => __( 'Front Page Seven', 'edin' ),
+    'id'            => 'sidebar-11',
+    'description'   => __( 'Use this widget area to display widgets in the first column, third row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+  register_sidebar( array(
+    'name'          => __( 'Front Page Eight', 'edin' ),
+    'id'            => 'sidebar-12',
+    'description'   => __( 'Use this widget area to display widgets in the second column, third row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+  register_sidebar( array(
+    'name'          => __( 'Front Page Nine', 'edin' ),
+    'id'            => 'sidebar-13',
+    'description'   => __( 'Use this widget area to display widgets in the third column, third row of your Front Page', 'edin' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+}
+add_action( 'widgets_init', 'edin_improved_widgets_init' );
+
 function custom_wp_trim_excerpt($text) {
   $raw_excerpt = $text;
   if ( '' == $text ) {
