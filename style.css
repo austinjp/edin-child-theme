@@ -87,3 +87,88 @@ img.edin-improved-post-thumbnail {
 h1.site-title {
   padding: 0 !important;
 }
+
+
+/* ############################################## */
+
+#colophon {
+  display: none !important;
+}
+
+h1.site-title {
+  padding: 0 !important;
+}
+
+.home.page .hero .hentry .entry-content p {
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  font-size: 1.3em;
+  line-height: 1.3em;
+  letter-spacing: 1px;
+}
+
+/* ######################### Edin menu tweaks ############################# */
+
+li .current-menu-item,
+li .current_page_item,
+li .current-menu-item a,
+li .current_page_item a,
+li.current_page_item,
+li.current_page_item > a {
+  color: white !important;
+}
+
+ul#menu-top-menu li a {
+  text-transform: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .primary-navigation {
+    background-color: silver;
+  }
+}
+
+.header-wrapper.clear {
+  /* border: 0; */
+}
+
+button.menu-toggle {
+    /* padding: 15px !important; */
+    text-align: center !important;
+}
+
+/* ######################### Edin featured pages on front page tweaks ############################# */
+
+.home.page .featured-page-area {
+  background-color: #f3f2f1;
+}
+
+.home.page .featured-page .hentry {
+  background-color: white;
+  padding: 4px;
+  -webkit-box-shadow: 1px 12px 31px -14px rgba(0,0,0,0.45);
+  -moz-box-shadow: 1px 12px 31px -14px rgba(0,0,0,0.45);
+  box-shadow: 1px 12px 31px -14px rgba(0,0,0,0.45);
+}
+
+@media screen and (max-width: 600px) {
+  .home.page .featured-page {
+    padding-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home.page .featured-page {
+    padding-bottom: 24px;
+  }
+}
+
+.home.page .entry-header, .entry-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ######################### Edin page header tweaks ############################# */
+
+.site-header {
+  background-color: #e9e8e7;
+}
