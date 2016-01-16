@@ -136,6 +136,12 @@ button.menu-toggle {
     text-align: center !important;
 }
 
+button.search-toggle.open:before,
+button.search-toggle.open {
+    background-color: transparent;
+    color: #202020 !important;
+}
+
 /* ######################### Edin featured pages on front page tweaks ############################# */
 
 .home.page .featured-page-area {
